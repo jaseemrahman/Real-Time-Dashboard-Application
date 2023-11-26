@@ -1,0 +1,127 @@
+.table-container {
+    margin-top: 20px;
+}
+.nav {
+    background-color: #2980b9; 
+}
+.pagename2 {
+    text-decoration: none; 
+    color: #fff; 
+    font-size: 28px; 
+    font-weight: bold; 
+    display: inline-block; 
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #3498db; 
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #2980b9;
+    padding: 12px;
+    color: #fff; 
+    font-size: 24px;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+.table tbody tr:hover {
+    background-color: #bdc3c7;
+    cursor: pointer;
+}
+.table td {
+    font-weight: bold; 
+    font-size:18px;
+}
+
+
+.hero h1 {
+    color: #1a237e; 
+    font-size: 28px; 
+    margin-bottom: 20px; 
+}
+/* Style for the form container */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Style for the form */
+#addSensorForm {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Style for the form labels */
+#addSensorForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+#value {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* Style for the form button */
+#addSensorForm button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style for the success message */
+#message001 {
+    color: green;
+    font-weight: bold;
+    display: none;
+    margin-top: 10px;
+}
+.filter-sort-form {
+    display: none;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style for the sortForm dropdown */
+#sortForm {
+    margin-top: 10px; 
+}
+
+#sortOrder {
+    padding: 8px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333; 
+}
+
+/* Style for dropdown options */
+#sortOrder option {
+    background-color: #fff; 
+    color: #333; 
+}

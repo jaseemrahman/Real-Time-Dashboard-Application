@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PiServe</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
+    <link href="//mincss.com/entireframework.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/app.js') }}"></script>
+
+    <nav class="nav" tabindex="-1" onclick="this.focus()">
+        <div class="container">
+            <a class="pagename2" href="https://piserve.com/"> PiServe</a>
+        </div>
+    </nav>
+   
+    <div class="container">
+        <div class="hero">
+            <h1>REAL-TIME DASHBOARD APPLICATION</h1>
+            <div class="table-container">
+                 <!-- Filter and Sort Buttons -->
+                 <div>
+                    <button onclick="toggleFilterSortForm()">Filter</button>
+                </div>
+    
+                <!-- Filter and Sort Form -->
+                <div class="filter-sort-form">
+                    <!-- Filter Form -->
+                    <div class="filter-buttons-row">
+                        <label for="startDate">Start Date:</label>
+                        <input type="date" id="startDate">
+                        <label for="endDate">End Date:</label>
+                        <input type="date" id="endDate">
+                        <button type="button" onclick="applyFilter()">Apply Filter</button>
+                        <button type="button" onclick="resetFilter()">Reset</button>
+                    </div>
+                    <!-- Sort Form -->
+                
+                </div>
+                <form id="sortForm" class="form-inline">
+                    <label for="sortOrder">Sort Order:</label>
+                    <select id="sortOrder">
+                        <option value="desc">Descending</option>
+                        <option value="asc">Ascending</option>
+                       
+                    </select>
+                </form>
+                <div class="container">
+                    <div class="hero">
+                        <!-- Existing content -->
+            
+                       
+                    </div>
+                </div>
+                <table id="dataTable" class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Value</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <hr>
+                <div class="form-group col-lg-5 col-7">
+                    <span id ="message001" style="color:green;display:none"><b>Sensor Value Added Successfully</b></span>
+                    <span id ="message002" style="color:red;display:none"><b>Sensor Value Deleted Successfully</b></span>
+                </div>
+                <form id="addSensorForm">
+                    <label for="value">Add New Sensor Value:</label>
+                    <input type="text" id="value" required maxlength="3" minlength="2" onkeypress='return restrictAlphabets(event)' placeholder="Sensor Data">
+                    <button type="submit">Add Sensor Data</button>
+                </form>
+                <hr>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    function toggleFilterSortForm() {
+        // Toggle the display of the filter/sort form
+        $('.filter-sort-form').toggle();
+    }
+</script>
+<script>
+    function restrictAlphabets(e){
+        var x = e.which || e.keycode;
+        if((x>=48 && x<=57))
+            return true;
+        else
+            return false;
+    }
+</script>
+</html>
